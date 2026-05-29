@@ -167,7 +167,7 @@
 }
 
 @utility h1-bold {
-    @apply text-[30px] leading-[42px] font-bold tracking-tighter;
+    @apply text-[30px] leading-10.5 font-bold tracking-tighter;
 }
 
 @utility h2-bold {
@@ -179,7 +179,7 @@
 }
 
 @utility h3-bold {
-    @apply text-[20px] leading-[26px] font-bold;
+    @apply text-[20px] leading-6.5 font-bold;
 }
 
 @utility h3-semibold {
@@ -239,11 +239,11 @@
 }
 
 @utility subtle-medium {
-    @apply text-[10px]! leading-[13px]! font-medium!;
+    @apply text-[10px]! leading-3.25! font-medium!;
 }
 
 @utility subtle-regular {
-    @apply text-[10px] leading-[13px] font-normal;
+    @apply text-[10px] leading-3.25 font-normal;
 }
 
 @utility placeholder {
