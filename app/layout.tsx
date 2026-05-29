@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/context/Theme";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = localFont({
     src: "./fonts/interVF.ttf",
@@ -33,7 +37,7 @@ export default function RootLayout({
         <html
             suppressHydrationWarning
             lang="en"
-            className={`${inter.className} ${spaceGrotesk.variable} h-full antialiased`}
+            className={cn("h-full", "antialiased", inter.className, spaceGrotesk.variable, "font-sans", geist.variable)}
         >
             <body className="flex min-h-full flex-col">
                 <ThemeProvider attribute="class" defaultTheme="system">
