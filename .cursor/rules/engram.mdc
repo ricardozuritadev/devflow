@@ -1,0 +1,31 @@
+---
+description: Usar Engram MCP para memoria persistente en devflow
+alwaysApply: true
+---
+
+# Engram (memoria persistente)
+
+Este proyecto usa **Engram** (`user-engram` MCP). El nombre de proyecto en Engram es **`devflow`** (ruta: `/Users/rickyzu/Developer/Web/devflow`).
+
+## Al iniciar una sesión
+
+1. `mem_current_project` — confirmar que el proyecto detectado es `devflow` (si no, usar `project: "devflow"` en las herramientas siguientes).
+2. `mem_context` con `{ "project": "devflow" }` — leer decisiones, bugfixes y convenciones previas antes de cambiar código.
+
+## Durante el trabajo
+
+Tras decisiones de arquitectura, bugfixes relevantes, patrones nuevos o configuración importante, llamar **`mem_save`** de forma proactiva:
+
+- `project`: `"devflow"`
+- `title`: corto y buscable
+- `type`: `decision` | `architecture` | `bugfix` | `pattern` | `config` | `discovery`
+- `topic_key`: para actualizar el mismo tema (ej. `architecture/auth`)
+- `content`: formato **What** / **Why** / **Where** / **Learned**
+
+## Al cerrar o terminar trabajo significativo
+
+- `mem_session_summary` con resumen de lo hecho en la sesión.
+
+## Conflictos
+
+Si `mem_save` devuelve `judgment_required`, resolver con `mem_judge` según las instrucciones del servidor Engram.
