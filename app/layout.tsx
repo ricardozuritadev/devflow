@@ -5,7 +5,9 @@ import ThemeProvider from "@/context/Theme";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import { Navbar } from "@/components/navigation/navbar";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = localFont({
     src: "./fonts/interVF.ttf",
@@ -37,10 +39,23 @@ export default function RootLayout({
         <html
             suppressHydrationWarning
             lang="en"
-            className={cn("h-full", "antialiased", inter.className, spaceGrotesk.variable, "font-sans", geist.variable)}
+            className={cn(
+                "h-full",
+                "antialiased",
+                inter.className,
+                spaceGrotesk.variable,
+                "font-sans",
+                geist.variable
+            )}
         >
             <body className="flex min-h-full flex-col">
-                <ThemeProvider attribute="class" defaultTheme="system">
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <Navbar />
                     {children}
                 </ThemeProvider>
             </body>
